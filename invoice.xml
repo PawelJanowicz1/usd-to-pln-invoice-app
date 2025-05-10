@@ -2,30 +2,9 @@
 <invoice>
     <computers>
         <accountingDate/>
-        <costPLN>1432.16</costPLN>
-        <costUSD>345.00</costUSD>
-        <id>1</id>
-        <name>ACER Aspire</name>
-    </computers>
-    <computers>
-        <accountingDate/>
-        <costPLN>2248.83</costPLN>
-        <costUSD>543.00</costUSD>
-        <id>2</id>
-        <name>DELL Latitude</name>
-    </computers>
-    <computers>
-        <accountingDate/>
-        <costPLN>2450.87</costPLN>
-        <costUSD>593.00</costUSD>
-        <id>3</id>
-        <name>DELL Latitude</name>
-    </computers>
-    <computers>
-        <accountingDate/>
         <costPLN>1432.164000</costPLN>
         <costUSD>345.00</costUSD>
-        <id>4</id>
+        <id>1</id>
         <name>ACER Aspire</name>
     </computers>
 </invoice>
