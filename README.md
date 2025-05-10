@@ -67,7 +67,7 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 * Java 17
 * Spring Boot 3.4
 * Spring Data JPA / Hibernate
-* Spring WebClient (REST client)
+* RestClient
 * MySQL
 * Lombok
 * Maven
