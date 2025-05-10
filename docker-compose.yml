@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  mysql-usdtopln:
+    image: mysql:latest
+    ports:
+      - "3309:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: usdtopln_user
+      MYSQL_ROOT_PASSWORD: StrongPass123!
+      MYSQL_PASSWORD: StrongPass123!
+      MYSQL_DATABASE: usdtopln_db
+    volumes:
+      - usdtopln-mysql-data:/var/lib/mysql
+    networks:
+      - usdtopln-net
+
+volumes:
+  usdtopln-mysql-data:
+
+networks:
+  usdtopln-net:
+    name: usdtopln-net
