@@ -2,16 +2,6 @@
 
 This Java application converts computer purchase prices from USD to PLN using the NBP public REST API based on the specified accounting date. It then stores the results in a relational database and exports them to an XML file in the desired format.
 
-## :hammer_and_wrench: Used Technologies
-
-* Java 17
-* Spring Boot 3.4
-* Spring Data JPA / Hibernate
-* Spring WebClient (REST client)
-* MySQL
-* Lombok
-* Maven
-
 ## 🚀 Getting Started
 
 These instructions will help you set up the project locally for development and testing.
@@ -19,11 +9,10 @@ These instructions will help you set up the project locally for development and 
 ### 🔧 Prerequisites
 - Java 17 or Java 21
 - IDE (e.g. IntelliJ IDEA)
-- [Docker & Docker Compose](https://docs.docker.com/get-docker/)
+- Docker
 - Maven 3.6+
-- [Postman](https://www.postman.com/downloads/) (for using the provided collection)
+- Postman
 
----
 
 ## ⚙️ Step-by-Step Setup
 
@@ -51,7 +40,6 @@ Alternatively, you can build a JAR and run:
 java -jar target/usd-to-pln-invoice-app-0.0.1-SNAPSHOT.jar
 ```
 
----
 
 ### 3. 🧪 Test the API with Postman
 A ready-to-use Postman collection is provided in the project: **`resources/postman/USD to PLN API - Paweł Janowicz.postman_collection.json`**.
@@ -66,7 +54,6 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 - The computers are stored in the MySQL database.
 - An XML file named `invoice.xml` is created in the root folder.
 
----
 
 ## 🔍 Useful Endpoints
 | Method | Endpoint                | Description                      |
@@ -75,20 +62,15 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 | GET    | `/computers/search`     | Search by name or date           |
 | GET    | `/computers/sort?by=...`| Sort by name or date             |
 
+## :hammer_and_wrench: Used Technologies
 
-## 📦 Technologies Used
-- Java 17 / 21
-- Spring Boot
-- Spring Data JPA (Hibernate)
-- MySQL
-- REST Client (`RestClient` from Spring 6+)
-- JAXB for XML export
-
-
-## ✅ Future Improvements
-- Add pagination to endpoints
-- Add PDF export
-- Add user authentication
+* Java 17
+* Spring Boot 3.4
+* Spring Data JPA / Hibernate
+* Spring WebClient (REST client)
+* MySQL
+* Lombok
+* Maven
 
 ## :camera: Screenshots
 
