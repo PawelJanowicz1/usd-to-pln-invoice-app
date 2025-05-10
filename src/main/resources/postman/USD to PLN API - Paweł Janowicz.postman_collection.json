@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "7ac1faaf-21aa-4ab6-8dee-7f487c28358d",
+		"name": "USD to PLN API - Paweł Janowicz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31342401"
+	},
+	"item": [
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"DELL Latitude\",\n  \"costUSD\": 345.00,\n  \"accountingDate\": \"2025-01-03\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/computers/add",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"computers",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/computers/search?name=ACER Aspire&date=2025-01-03",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"computers",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ACER Aspire"
+						},
+						{
+							"key": "date",
+							"value": "2025-01-03"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/computers/sort?by=name&order=asc",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"computers",
+						"sort"
+					],
+					"query": [
+						{
+							"key": "by",
+							"value": "name"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
