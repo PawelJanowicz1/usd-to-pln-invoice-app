@@ -58,7 +58,7 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 ## 🔍 Useful Endpoints
 | Method | Endpoint                 | Description                                                  |
 |--------|--------------------------|--------------------------------------------------------------|
-| POST   | `/computers/add`         | Add a new computer (JSON body)                               |
+| POST   | `/api/computers/add`         | Add a new computer (JSON body)                               |
 | GET    | `/api/computers`         | Search and sort computers by name or date (with pagination)  |
 
 ### 🔧 Query Parameters for `/api/computers`
