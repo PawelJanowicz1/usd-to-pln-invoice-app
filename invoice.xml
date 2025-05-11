@@ -2,9 +2,23 @@
 <invoice>
     <computers>
         <accountingDate/>
-        <costPLN>33686.988000</costPLN>
+        <costPLN>33686.99</costPLN>
         <costUSD>8115.00</costUSD>
         <id>1</id>
         <name>DELL Latitude</name>
+    </computers>
+    <computers>
+        <accountingDate/>
+        <costPLN>3366.62</costPLN>
+        <costUSD>811.00</costUSD>
+        <id>2</id>
+        <name>DELL Latitude</name>
+    </computers>
+    <computers>
+        <accountingDate/>
+        <costPLN>5811.680000</costPLN>
+        <costUSD>1400.00</costUSD>
+        <id>3</id>
+        <name>Razer blade 15</name>
     </computers>
 </invoice>
