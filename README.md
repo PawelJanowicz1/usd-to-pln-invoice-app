@@ -74,13 +74,9 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 
 ## :camera: Screenshots
 
-Add computer and convert     |  Search specific computer
+Add computer and convert     |  Searching computers
 :------------------------:|:-------------------------:
-![Add computer and convert](src/main/resources/static/images/add_computer.png)  |  ![Search specific computer](src/main/resources/static/images/search_computer.png)
-
-Sort by name     |  Sort by date
-:------------------------:|:-------------------------:
-![Sort by name](src/main/resources/static/images/sort_by_name.png)  |  ![Sort by date](src/main/resources/static/images/sort_by_date.png)
+![Add computer and convert](src/main/resources/static/images/add_computer.png)  |  ![Searching computers](src/main/resources/static/images/searching.png)
 
 invoice (xml file)      
 :------------------------:
