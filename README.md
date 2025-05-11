@@ -58,10 +58,17 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 ## 🔍 Useful Endpoints
 | Method | Endpoint                 | Description                                                  |
 |--------|--------------------------|--------------------------------------------------------------|
-| POST   | `/api/computers/add`         | Add a new computer (JSON body)                               |
+| POST   | `/api/computers/add`     | Add a new computer (JSON body)                               |
 | GET    | `/api/computers`         | Search and sort computers by name or date (with pagination)  |
 
-### 🔧 Query Parameters for `/api/computers`
+### 🔧 JSON Body Parameters for `POST /api/computers/add`
+| Field             | Type        | Required | Description                     |
+|------------------|-------------|----------|---------------------------------|
+| `name`           | String      | Yes      | Computer name                   |
+| `costUSD`        | BigDecimal  | Yes      | Price in USD                    |
+| `accountingDate` | ISO Date    | Yes      | Accounting date (e.g. 2025-05-11) |
+
+### 🔧 Query Parameters for `GET /api/computers`
 | Param       | Type     | Required | Description                              |
 |-------------|----------|----------|------------------------------------------|
 | `name`      | String   | No       | Filter by computer name                  |
