@@ -1,10 +1,16 @@
 package com.repofetcher.usdtoplninvoiceapp.controller;
 
+import com.repofetcher.usdtoplninvoiceapp.dto.ComputerDto;
 import com.repofetcher.usdtoplninvoiceapp.dto.ComputerRequest;
 import com.repofetcher.usdtoplninvoiceapp.model.Computer;
 import com.repofetcher.usdtoplninvoiceapp.repository.ComputerRepository;
 import com.repofetcher.usdtoplninvoiceapp.service.ComputerService;
 import com.repofetcher.usdtoplninvoiceapp.service.XmlExportService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -29,22 +35,20 @@ public class ComputerController {
         return "Computer added and exported to invoice.xml";
     }
 
-    @GetMapping("/search")
-    public List<Computer> search(@RequestParam(required = false) String name,
-                                 @RequestParam(required = false) String date) {
-        if (name != null) return repository.findByNameContainingIgnoreCase(name);
-        if (date != null) return repository.findByAccountingDate(LocalDate.parse(date));
-        return repository.findAll();
-    }
+    @GetMapping
+    public Page<ComputerDto> findComputers(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "name") String sortBy,
+            @RequestParam(defaultValue = "asc") String direction
+    ) {
+        Sort sort = direction.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
 
-    @GetMapping("/sort")
-    public List<Computer> sort(@RequestParam String by, @RequestParam String order) {
-        if (by.equals("name")) {
-            return order.equals("asc") ? repository.sortByNameAsc() : repository.sortByNameDesc();
-        }
-        if (by.equals("date")) {
-            return order.equals("asc") ? repository.sortByAccountingDateAsc() : repository.sortByAccountingDateDesc();
-        }
-        return repository.findAll();
+        Pageable pageable = PageRequest.of(page, size, sort);
+        return computerService.searchAndSort(name, date, pageable);
     }
 }

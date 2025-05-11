@@ -1,6 +1,8 @@
 package com.repofetcher.usdtoplninvoiceapp.repository;
 
 import com.repofetcher.usdtoplninvoiceapp.model.Computer;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,18 +11,9 @@ import java.util.List;
 
 @Repository
 public interface ComputerRepository extends JpaRepository<Computer, Long> {
-    List<Computer> findByNameContainingIgnoreCase(String fragment);
-    List<Computer> findByAccountingDate(LocalDate date);
+    Page<Computer> findByNameContainingIgnoreCaseAndAccountingDate(String name, LocalDate date, Pageable pageable);
 
-    @Query("SELECT c FROM Computer c ORDER BY c.name ASC")
-    List<Computer> sortByNameAsc();
+    Page<Computer> findByNameContainingIgnoreCase(String name, Pageable pageable);
 
-    @Query("SELECT c FROM Computer c ORDER BY c.name DESC")
-    List<Computer> sortByNameDesc();
-
-    @Query("SELECT c FROM Computer c ORDER BY c.accountingDate ASC")
-    List<Computer> sortByAccountingDateAsc();
-
-    @Query("SELECT c FROM Computer c ORDER BY c.accountingDate DESC")
-    List<Computer> sortByAccountingDateDesc();
+    Page<Computer> findByAccountingDate(LocalDate date, Pageable pageable);
 }

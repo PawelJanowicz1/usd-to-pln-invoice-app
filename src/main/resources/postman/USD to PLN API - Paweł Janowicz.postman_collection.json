@@ -40,51 +40,37 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{local}}/api/computers/search?name=ACER Aspire&date=2025-01-03",
+					"raw": "{{local}}/api/computers?name=DELL&date=2025-01-03&page=0&size=3&sortBy=name&direction=asc",
 					"host": [
 						"{{local}}"
 					],
 					"path": [
 						"api",
-						"computers",
-						"search"
+						"computers"
 					],
 					"query": [
 						{
 							"key": "name",
-							"value": "ACER Aspire"
+							"value": "DELL"
 						},
 						{
 							"key": "date",
 							"value": "2025-01-03"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "sort",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{local}}/api/computers/sort?by=name&order=asc",
-					"host": [
-						"{{local}}"
-					],
-					"path": [
-						"api",
-						"computers",
-						"sort"
-					],
-					"query": [
+						},
 						{
-							"key": "by",
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "sortBy",
 							"value": "name"
 						},
 						{
-							"key": "order",
+							"key": "direction",
 							"value": "asc"
 						}
 					]
