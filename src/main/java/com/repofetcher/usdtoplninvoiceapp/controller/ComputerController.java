@@ -2,7 +2,6 @@ package com.repofetcher.usdtoplninvoiceapp.controller;
 
 import com.repofetcher.usdtoplninvoiceapp.dto.ComputerDto;
 import com.repofetcher.usdtoplninvoiceapp.dto.ComputerRequest;
-import com.repofetcher.usdtoplninvoiceapp.model.Computer;
 import com.repofetcher.usdtoplninvoiceapp.repository.ComputerRepository;
 import com.repofetcher.usdtoplninvoiceapp.service.ComputerService;
 import com.repofetcher.usdtoplninvoiceapp.service.XmlExportService;
@@ -13,7 +12,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/computers")
