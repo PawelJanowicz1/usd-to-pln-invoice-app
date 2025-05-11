@@ -56,11 +56,20 @@ A ready-to-use Postman collection is provided in the project: **`resources/postm
 
 
 ## 🔍 Useful Endpoints
-| Method | Endpoint                | Description                      |
-|--------|-------------------------|----------------------------------|
-| POST   | `/computers/add`        | Add a new computer (JSON body)   |
-| GET    | `/computers/search`     | Search by name or date           |
-| GET    | `/computers/sort?by=...`| Sort by name or date             |
+| Method | Endpoint                 | Description                                                  |
+|--------|--------------------------|--------------------------------------------------------------|
+| POST   | `/computers/add`         | Add a new computer (JSON body)                               |
+| GET    | `/api/computers`         | Search and sort computers by name or date (with pagination)  |
+
+### 🔧 Query Parameters for `/api/computers`
+| Param       | Type     | Required | Description                              |
+|-------------|----------|----------|------------------------------------------|
+| `name`      | String   | No       | Filter by computer name                  |
+| `date`      | ISO Date | No       | Filter by date (e.g. 2025-05-11)         |
+| `page`      | Integer  | No       | Page number (default: 0)                 |
+| `size`      | Integer  | No       | Page size (default: 10)                  |
+| `sortBy`    | String   | No       | Sort field (`name`, `date`, etc.)        |
+| `direction` | String   | No       | Sort direction (`asc` or `desc`)         |
 
 ## :hammer_and_wrench: Used Technologies
 
